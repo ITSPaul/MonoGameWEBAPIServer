@@ -12,6 +12,7 @@ using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 using Microsoft.Xna.Framework.Storage;
 using Microsoft.Xna.Framework.GamerServices;
+using System.IO;
 #endregion
 
 namespace MonoWebAPI
@@ -24,7 +25,7 @@ namespace MonoWebAPI
         GraphicsDeviceManager graphics;
         SpriteBatch spriteBatch;
         SpriteFont spFont;
-
+        List<Texture2D> badges = new List<Texture2D>();
         string message;
 
         public Game1()
@@ -119,10 +120,27 @@ namespace MonoWebAPI
             {
                 client.DefaultRequestHeaders.Authorization =
                 new System.Net.Http.Headers.AuthenticationHeaderValue("Bearer", token);
+                
 
                 var response = client.GetAsync("http://localhost:61666/api/Account/UserInfo").Result;
                 return response.Content.ReadAsStringAsync().Result;
             }
+        }
+
+        public void setBadge(string filename)
+        {
+            MemoryStream stream = new MemoryStream();
+            Texture2D _tex = Content.Load<Texture2D>(filename);
+            _tex.SaveAsPng(stream, _tex.Width, _tex.Height);
+            byte[] image;
+            image = stream.ToArray();
+            badges.Add(_tex);
+
+        }
+
+        public void getBadges()
+        {
+
         }
 
         /// <summary>
@@ -171,6 +189,10 @@ namespace MonoWebAPI
 
             spriteBatch.Begin();
             spriteBatch.DrawString(spFont, message, new Vector2(10, 10), Color.White);
+            foreach (Texture2D badge in badges)
+            {
+                
+            }
             spriteBatch.End();
             //spriteBatch.DrawString()
             // TODO: Add your drawing code here
