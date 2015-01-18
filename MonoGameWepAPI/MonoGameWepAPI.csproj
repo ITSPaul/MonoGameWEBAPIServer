@@ -217,9 +217,9 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\PlayersController.cs" />
     <Compile Include="Controllers\ValuesController.cs" />
-    <Compile Include="Database\GameDbMigrations\201412041039417_initialGameContext.cs" />
-    <Compile Include="Database\GameDbMigrations\201412041039417_initialGameContext.Designer.cs">
-      <DependentUpon>201412041039417_initialGameContext.cs</DependentUpon>
+    <Compile Include="Database\GameDbMigrations\201501181523174_Initialise.cs" />
+    <Compile Include="Database\GameDbMigrations\201501181523174_Initialise.Designer.cs">
+      <DependentUpon>201501181523174_Initialise.cs</DependentUpon>
     </Compile>
     <Compile Include="Database\GameDbMigrations\Configuration.cs" />
     <Compile Include="Global.asax.cs">
@@ -302,14 +302,15 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Content\Images\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
     <None Include="Project_Readme.html" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Database\GameDbMigrations\201412041039417_initialGameContext.resx">
-      <DependentUpon>201412041039417_initialGameContext.cs</DependentUpon>
+    <EmbeddedResource Include="Database\GameDbMigrations\201501181523174_Initialise.resx">
+      <DependentUpon>201501181523174_Initialise.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

@@ -7,13 +7,13 @@ namespace MonoGameWepAPI.Database.GameDbMigrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.1.1-30610")]
-    public sealed partial class initialGameContext : IMigrationMetadata
+    public sealed partial class Initialise : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(initialGameContext));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(Initialise));
         
         string IMigrationMetadata.Id
         {
-            get { return "201412041039417_initialGameContext"; }
+            get { return "201501181523174_Initialise"; }
         }
         
         string IMigrationMetadata.Source
